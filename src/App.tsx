@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Link } from 'react-router-dom'
 import { Layout } from 'layouts'
 import { BackgroundTasks } from 'components/BackgroundTasks'
 
-function App() {
+function App(): JSX.Element {
   return (
     <Router>
       <Link to="/">Go Home</Link> / <Link to="/login">Go to Login</Link> /
