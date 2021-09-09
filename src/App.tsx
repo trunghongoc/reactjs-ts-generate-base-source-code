@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Link } from 'react-router-dom'
+import { Layout } from 'layouts'
+import { BackgroundTasks } from 'components/BackgroundTasks'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Link to="/">Go Home</Link> / <Link to="/login">Go to Login</Link> /
+      <Link to="/about">Go to About</Link>
+      <BackgroundTasks />
+      <Layout />
+      <div
+        style={{
+          padding: 10,
+          boxSizing: 'border-box',
+          border: '1px solid #ccc'
+        }}
+      >
+        Inspect element to see layout per page was changed
+      </div>
+    </Router>
+  )
 }
 
-export default App;
+export default App
