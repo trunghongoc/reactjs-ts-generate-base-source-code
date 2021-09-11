@@ -1,0 +1,105 @@
+@import 'scss/var/color';
+@import 'scss/mixins/text';
+@import 'scss/mixins/dimention';
+@import 'scss/mixins/spacing';
+@import 'scss/media';
+@import 'scss/functions/unit';
+
+@import './../../var';
+
+.user-info {
+  display: grid;
+  grid-template-columns: #{getUnitRem(35)} auto #{getUnitRem(20)};
+  @include setSpacing(padding, 10 18);
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &__avatar {
+    position: relative;
+
+    img {
+      @include setDimention(width, 35);
+      @include setDimention(height, 35);
+      border-radius: 50%;
+    }
+
+    &::after {
+      position: absolute;
+      right: 0;
+      bottom: getUnitRem(3);
+
+      display: block;
+      @include setDimention(width, 8);
+      @include setDimention(height, 8);
+      content: '';
+      border-radius: 50%;
+    }
+
+    &.-status-active {
+      &::after {
+        background: #00d25b;
+      }
+    }
+
+    &.-status-warn {
+      &::after {
+        background: #fc424a;
+      }
+    }
+  }
+
+  &__text {
+    @include setSpacing(margin-left, 16);
+    display: grid;
+    align-items: center;
+
+    .name {
+      @include setFontSize(16);
+      color: $theme-light-main-text-bold;
+    }
+
+    .role {
+      @include setFontSize(12);
+      color: #6c7293;
+    }
+  }
+
+  &__more {
+    display: grid;
+    align-items: center;
+    cursor: pointer;
+
+    svg {
+      @include setFontSize(20);
+      color: #6c7293;
+    }
+  }
+
+  &.-is-collapsed {
+    .user-info__text,
+    .user-info__more {
+      display: none;
+    }
+  }
+
+  @mixin theme-light {
+  }
+
+  @mixin theme-dark {
+    .user-info__text {
+      .name {
+        color: $theme-dark-main-text-bold;
+      }
+    }
+  }
+
+  @include theme-light;
+
+  &.-theme-light {
+    @include theme-light;
+  }
+
+  &.-theme-dark {
+    @include theme-dark;
+  }
+}

@@ -1,0 +1,48 @@
+@import 'scss/var/color';
+@import 'scss/mixins/text';
+@import 'scss/mixins/dimention';
+@import 'scss/mixins/spacing';
+@import 'scss/media';
+@import 'scss/functions/unit';
+
+.card {
+  box-sizing: border-box;
+  @include setSpacing(padding, 20);
+  color: #6c7293;
+  background: $theme-light-main-bg;
+  border-radius: getUnitRem(8);
+  @include setSpacing(margin-bottom, 20);
+
+  > .title {
+    color: $theme-light-main-text-bold;
+    @include setSpacing(margin-bottom, 10);
+  }
+
+  .link {
+    cursor: pointer;
+  }
+
+  @mixin theme-light {
+    box-shadow: rgba(145, 158, 171, 0.24) 0px 0px 2px 0px,
+      rgba(145, 158, 171, 0.24%) 0px 16px 32px -4px;
+  }
+
+  @mixin theme-dark {
+    background: $theme-dark-main-bg;
+    box-shadow: none;
+
+    > .title {
+      color: $theme-dark-main-text-bold;
+    }
+  }
+
+  @include theme-light;
+
+  &.-theme-light {
+    @include theme-light;
+  }
+
+  &.-theme-dark {
+    @include theme-dark;
+  }
+}

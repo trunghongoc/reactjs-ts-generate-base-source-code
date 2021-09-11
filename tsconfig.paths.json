@@ -11,6 +11,7 @@
       "@page/*": ["./pages/*"],
       "@redux/*": ["./redux/*"],
       "@router/*": ["./router/*"],
+      "@scss/*": ["./scss/*"],
       "@service/*": ["./services/*"]
     }
   }

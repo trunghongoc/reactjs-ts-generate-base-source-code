@@ -1,0 +1,53 @@
+@import 'scss/var/color';
+@import 'scss/mixins/text';
+@import 'scss/mixins/dimention';
+@import 'scss/mixins/spacing';
+@import 'scss/media';
+@import 'scss/functions/unit';
+
+@import './../var';
+
+.menu {
+  position: fixed;
+  top: getUnitRem($nav-height);
+  left: 0;
+  @include setDimention(width, $menu-expand-width);
+  height: calc(100vh - #{getUnitRem($nav-height)});
+  @include setSpacing(padding, 10 0);
+  box-sizing: border-box;
+
+  > .title {
+    color: #6c7293;
+    box-sizing: border-box;
+    @include setSpacing(padding, 8 18);
+  }
+  &.-is-collaped {
+    @include setDimention(width, $menu-collapsed-width);
+    > .title {
+      span {
+        display: grid;
+        justify-content: center;
+      }
+    }
+  }
+
+  @mixin theme-light {
+    background: $theme-light-main-bg;
+    border-right: 1px solid #eee;
+  }
+
+  @mixin theme-dark {
+    background: $theme-dark-main-bg;
+  }
+
+  @include theme-light;
+
+  &.-theme-light {
+    @include theme-light;
+  }
+
+  &.-theme-dark {
+    @include theme-dark;
+    border-right: none;
+  }
+}

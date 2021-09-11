@@ -1,0 +1,74 @@
+@import 'scss/var/color';
+@import 'scss/mixins/text';
+@import 'scss/mixins/dimention';
+@import 'scss/mixins/spacing';
+@import 'scss/media';
+@import 'scss/functions/unit';
+
+.footer {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+  @include setDimention(height, 40);
+  @include setSpacing(padding, 0 18);
+  box-sizing: border-box;
+
+  %item {
+    display: grid;
+    align-items: center;
+    height: 100%;
+    box-sizing: border-box;
+
+    .round-btn {
+      display: flex;
+      @include setDimention(width, 32);
+      @include setDimention(height, 32);
+      border-radius: 50%;
+      background: rgba(108, 114, 147, 0.2);
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      color: $theme-dark-main-text;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  .switch-theme {
+    @extend %item;
+  }
+
+  .expand {
+    justify-content: end;
+
+    @extend %item;
+  }
+
+  @mixin theme-light {
+    .round-btn {
+      &:hover {
+        color: $theme-light-main-text-bold;
+      }
+    }
+  }
+
+  @mixin theme-dark {
+    .round-btn {
+      &:hover {
+        color: $theme-dark-main-text-bold;
+      }
+    }
+  }
+
+  @include theme-light;
+
+  &.-theme-light {
+    @include theme-light;
+  }
+
+  &.-theme-dark {
+    @include theme-dark;
+  }
+}

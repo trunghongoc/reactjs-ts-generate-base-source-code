@@ -1,15 +1,6 @@
-@use "sass:math";
+@use 'sass:math';
 @import './../functions/text';
 
-@mixin fontSize($fontSize) {
-  font-size: ($fontSize * 10) + px;
-  font-size: $fontSize + rem;
-}
-
-@mixin getFontSize($pixcel) {
-  font-size: ($pixcel) + px;
-  font-size: ($pixcel / 16) + rem;
-}
 @mixin setFontSize($pixcel) {
   font-size: ($pixcel) + px;
   font-size: ($pixcel / 16) + rem;
@@ -19,7 +10,7 @@
   font-family: 'NotoSans-Regular';
 }
 
-@mixin fontBolt {
+@mixin fontBold {
   font-family: 'NotoSans-Bold';
 }
 

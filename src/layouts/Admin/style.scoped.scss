@@ -1,2 +1,63 @@
+@import 'scss/var/color';
+@import 'scss/mixins/text';
+@import 'scss/mixins/dimention';
+@import 'scss/mixins/spacing';
+@import 'scss/media';
+@import 'scss/functions/unit';
+
+@import './var';
+
 .admin-layout {
+  .admin-layout__body {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: #{getUnitRem($menu-expand-width)} auto;
+    @include setSpacing(margin-top, $nav-height);
+
+    .left {
+    }
+
+    .right {
+      box-sizing: border-box;
+      @include setSpacing(20 24);
+      background: $theme-light-body-bg;
+
+      > .content {
+        @include setFontSize(14);
+        color: #6c7293;
+      }
+    }
+  }
+
+  &.-is-collapsed {
+    .admin-layout__body {
+      grid-template-columns: #{getUnitRem($menu-collapsed-width)} auto;
+    }
+  }
+
+  @mixin theme-light {
+    .admin-layout__body {
+      .right {
+        background: #fff;
+      }
+    }
+  }
+
+  @mixin theme-dark {
+    .admin-layout__body {
+      .right {
+        background: $theme-dark-body-bg;
+      }
+    }
+  }
+
+  @include theme-light;
+
+  &.-theme-light {
+    @include theme-light;
+  }
+
+  &.-theme-dark {
+    @include theme-dark;
+  }
 }

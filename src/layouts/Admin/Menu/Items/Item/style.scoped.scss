@@ -1,0 +1,127 @@
+@import 'scss/var/color';
+@import 'scss/mixins/text';
+@import 'scss/mixins/dimention';
+@import 'scss/mixins/spacing';
+@import 'scss/media';
+@import 'scss/functions/unit';
+
+@import './../../../var';
+
+.item {
+  position: relative;
+  display: grid;
+  @include setSpacing(margin-bottom, 2);
+  @include setSpacing(padding-right, 18);
+  box-sizing: border-box;
+
+  &__dir {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    @include setDimention(height, 46);
+    @include setSpacing(padding-left, 18);
+    user-select: none;
+    align-items: center;
+
+    border-top-right-radius: getUnitRem(20);
+    border-bottom-right-radius: getUnitRem(20);
+    box-sizing: border-box;
+
+    color: #6c7293;
+    cursor: pointer;
+
+    &:hover {
+      background: #0f1015;
+    }
+
+    &__icon {
+      @include setDimention(width, 31);
+      @include setDimention(height, 31);
+      @include setSpacing(margin-right, 8);
+      border-radius: 50%;
+      background: rgba(108, 114, 147, 0.2);
+      display: grid;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        font-size: getUnitRem(15);
+      }
+    }
+  }
+
+  &.-active {
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      content: '';
+      width: 3px;
+      height: 100%;
+      background: #0090e7;
+    }
+
+    .item__dir {
+      background: $theme-light-body-bg;
+
+      .item__dir__title {
+        color: $theme-light-main-text-bold;
+      }
+    }
+  }
+
+  &:hover {
+    .item__dir {
+      background: $theme-light-body-bg;
+
+      .item__dir__title {
+        color: $theme-light-main-text-bold;
+      }
+    }
+  }
+
+  &.-is-collapsed {
+    .item__dir {
+      &__title {
+        display: none;
+      }
+    }
+  }
+
+  @mixin theme-light {
+  }
+
+  @mixin theme-dark {
+    &.-active {
+      .item__dir {
+        background: rgba(108, 114, 147, 0.2);
+
+        .item__dir__title {
+          color: $theme-dark-main-text-bold;
+        }
+      }
+    }
+
+    &:hover {
+      .item__dir {
+        background: rgba(108, 114, 147, 0.2);
+        color: $theme-dark-main-text-bold;
+      }
+
+      .item__dir__title {
+        color: $theme-dark-main-text-bold;
+      }
+    }
+  }
+
+  @include theme-light;
+
+  &.-theme-light {
+    @include theme-light;
+  }
+
+  &.-theme-dark {
+    @include theme-dark;
+  }
+}

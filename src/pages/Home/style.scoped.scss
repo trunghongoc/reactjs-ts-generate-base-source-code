@@ -1,0 +1,34 @@
+@import 'scss/var/color';
+@import 'scss/mixins/text';
+@import 'scss/mixins/dimention';
+@import 'scss/mixins/spacing';
+@import 'scss/media';
+@import 'scss/functions/unit';
+
+.home-page {
+  .header {
+    color: $theme-light-main-text-bold;
+    @include setFontSize(20);
+    @include fontMedium;
+    @include setSpacing(margin-bottom, 20);
+  }
+
+  @mixin theme-light {
+  }
+
+  @mixin theme-dark {
+    .header {
+      color: $theme-dark-main-text-bold;
+    }
+  }
+
+  @include theme-light;
+
+  &.-theme-light {
+    @include theme-light;
+  }
+
+  &.-theme-dark {
+    @include theme-dark;
+  }
+}

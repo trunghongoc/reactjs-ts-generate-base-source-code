@@ -1,0 +1,43 @@
+// refer: https://getbootstrap.com/docs/4.0/layout/overview/#responsive-breakpoints
+
+@mixin on-screen-xxl() {
+  @media screen and (min-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin on-screen-xl() {
+  @media screen and (min-width: 1200px) and (max-width: 1599px) {
+    @content;
+  }
+}
+
+@mixin on-screen-lg() {
+  @media screen and (min-width: 992px) and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin on-screen-md() {
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin on-screen-sm() {
+  @media screen and (min-width: 576px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin on-screen-xs() {
+  @media screen and (max-width: 575px) {
+    @content;
+  }
+}
+
+@mixin on-screen-gt-xl() {
+  @media screen and (max-width: 1199px) {
+    @content;
+  }
+}

@@ -8,6 +8,7 @@ import { routerMiddleware, connectRouter } from 'connected-react-router'
 
 import userSlice from './reducers/userSlice'
 import routerSlice from './reducers/routerSlice'
+import themeSlice from './reducers/themeSlice'
 
 // const customizedMiddleware: any = getDefaultMiddleware({
 //   serializableCheck: false
@@ -19,7 +20,7 @@ const middleware: any = [routerMiddleware(history), thunk]
 const persistConfig: any = {
   key: 'root',
   storage,
-  whitelist: ['user', 'router']
+  whitelist: ['user', 'router', 'theme']
 }
 
 const persistedReducer: any = persistReducer(
@@ -27,7 +28,8 @@ const persistedReducer: any = persistReducer(
   combineReducers({
     user: userSlice,
     router: routerSlice,
-    routerHistory: connectRouter(history)
+    routerHistory: connectRouter(history),
+    theme: themeSlice
   })
 )
 

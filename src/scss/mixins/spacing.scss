@@ -1,6 +1,6 @@
 @import './../functions/text';
 
-@mixin setSpace($setSpace: padding, $setSpaceValues: 0 0 0 0) {
+@mixin setSpacing($setSpace: padding, $setSpaceValues: 0 0 0 0) {
   @if type-of($setSpace) == list {
     $setSpaceValues: $setSpace;
     $setSpace: padding;

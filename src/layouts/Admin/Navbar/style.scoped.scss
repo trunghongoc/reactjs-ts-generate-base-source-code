@@ -1,3 +1,259 @@
+@import 'scss/var/color';
+@import 'scss/mixins/text';
+@import 'scss/mixins/dimention';
+@import 'scss/mixins/spacing';
+@import 'scss/media';
+@import 'scss/functions/unit';
+
+@import './../var';
+
 .navbar {
-  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: grid;
+  grid-template-columns: getUnitRem($menu-expand-width) auto auto;
+  &.-collaped-menu {
+    grid-template-columns: getUnitRem($menu-collapsed-width) auto auto;
+  }
+  width: 100%;
+
+  @mixin navHeight {
+    @include setDimention(height, $nav-height);
+  }
+
+  @include navHeight;
+
+  &__left {
+    display: grid;
+
+    @include navHeight;
+    @include setSpacing(padding-left, 20);
+    @include setFontSize(26);
+    color: #212b36;
+    align-items: center;
+    box-sizing: border-box;
+    letter-spacing: 3px;
+    overflow: hidden;
+
+    img {
+      @include setDimention(width, 124);
+      @include setDimention(max-width, 100%);
+    }
+  }
+  &.-collaped-menu {
+    .navbar__left {
+      span {
+        display: grid;
+        @include setDimention(width, 35);
+        justify-content: center;
+      }
+    }
+  }
+
+  &__middle {
+    display: grid;
+    grid-template-columns: getUnitRem(38) auto;
+
+    @include navHeight;
+    box-sizing: border-box;
+    @include setSpacing(padding, 0 20);
+
+    &__toggle {
+      display: grid;
+
+      width: 100%;
+      @include navHeight;
+
+      user-select: none;
+      cursor: pointer;
+      align-items: center;
+
+      img {
+        @include setDimention(width, 14);
+      }
+    }
+
+    &__search {
+      display: grid;
+
+      @include navHeight;
+
+      align-items: center;
+
+      input {
+        @include setDimention(height, 38);
+
+        border-radius: 6px;
+        color: #fff;
+        box-sizing: border-box;
+        padding: getUnitRem(20);
+        border: 1px solid #2c2e33;
+
+        outline: none;
+        outline-width: 0;
+        outline-color: transparent;
+        box-shadow: none;
+        outline-style: none;
+      }
+    }
+  }
+
+  &__right {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: end;
+    align-items: center;
+    @include setSpacing(padding-right, 20);
+    box-sizing: border-box;
+
+    &__app {
+      display: grid;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      justify-content: center;
+      @include setDimention(width, 50);
+      @include setDimention(height, 40);
+
+      border-right: 1px solid #2c2e33;
+
+      &.-no-border {
+        border-right: none;
+      }
+
+      img {
+        @include setDimention(width, 20);
+      }
+
+      &.-alert {
+        &::after {
+          position: absolute;
+          top: 17%;
+          left: 67%;
+          display: block;
+
+          @include setDimention(width, 8);
+          @include setDimention(height, 8);
+          border-radius: 50%;
+          content: '';
+        }
+      }
+
+      &.-success {
+        &::after {
+          background: #00d25b;
+        }
+      }
+
+      &.-warn {
+        &::after {
+          background: #fc424a;
+        }
+      }
+    }
+
+    &__user {
+      display: grid;
+      grid-template-columns: getUnitRem(45) auto;
+      @include navHeight;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      @include setSpacing(margin-left, 20);
+
+      img {
+        @include setDimention(width, 35);
+        @include setDimention(height, 35);
+        border-radius: 50%;
+      }
+
+      span {
+        color: $theme-light-main-text;
+        display: grid;
+        align-items: center;
+        grid-auto-flow: column;
+      }
+    }
+  }
+
+  @mixin theme-light {
+    box-shadow: 0 0 30px rgba(28, 39, 60, 0.08);
+    // border-bottom: 1px solid rgba(28, 39, 60, 0.12);
+    background: $theme-light-main-bg;
+
+    .navbar__left {
+      color: #212b36;
+    }
+
+    .navbar__middle {
+      &__search {
+        input {
+          background: $theme-light-main-bg;
+          color: $theme-light-main-text;
+          border-color: #eee;
+        }
+      }
+    }
+
+    .navbar__right {
+      &__app {
+        border-right-color: #eee;
+
+        svg {
+          color: #637381;
+        }
+      }
+    }
+  }
+
+  @mixin theme-dark {
+    box-shadow: 0 0 30px rgba(28, 39, 60, 0.08);
+    border-bottom: 1px solid rgba(28, 39, 60, 0.12);
+    background: $theme-dark-main-bg;
+
+    .navbar__left {
+      color: #fff;
+    }
+
+    .navbar__middle {
+      svg {
+        color: #6c7293;
+      }
+
+      &__search {
+        input {
+          background: $theme-dark-main-bg;
+        }
+      }
+    }
+
+    .navbar__right {
+      &__app {
+        svg {
+          color: $theme-dark-main-text-bold;
+        }
+      }
+
+      &__user {
+        svg,
+        span {
+          color: $theme-dark-main-text-bold;
+        }
+      }
+    }
+  }
+
+  &.-theme-light {
+    @include theme-light;
+  }
+  &.-theme-dark {
+    @include theme-dark;
+  }
+
+  // @include theme-light;
+
+  @include on-screen-gt-xl {
+  }
 }

@@ -1,18 +1,23 @@
 import { FC } from 'react'
-import UserService from 'services/user'
+
+import { useAdminThemeStyle, IUseAdminThemeStyle } from 'hooks/useThemeStyle'
+
+import { Card } from './Card'
 
 import './style.scoped.scss'
 
 const Home: FC = (): JSX.Element => {
-  return (
-    <div>
-      <h1>Home</h1>
+  const { themeClassName }: IUseAdminThemeStyle = useAdminThemeStyle()
 
-      <button
-        onClick={(): any => UserService.getCurrentUser({ name: 'trunghongoc' })}
-      >
-        Fetch API (run user service)
-      </button>
+  return (
+    <div className={`home-page ${themeClassName}`}>
+      <div className="header">Home page</div>
+
+      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(
+        (item: number): JSX.Element => (
+          <Card key={item} />
+        )
+      )}
     </div>
   )
 }

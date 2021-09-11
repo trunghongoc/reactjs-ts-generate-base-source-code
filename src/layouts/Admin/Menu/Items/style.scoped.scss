@@ -5,9 +5,11 @@
 @import 'scss/media';
 @import 'scss/functions/unit';
 
-body {
-  @include fontRegular;
-  @include setFontSize(14);
-  background: #fff;
-  margin: 0;
+@import './../../var';
+
+.items {
+  @include setSpacing(margin-top, 6);
+
+  height: calc(100% - #{getUnitRem(130)});
+  overflow-y: auto;
 }
