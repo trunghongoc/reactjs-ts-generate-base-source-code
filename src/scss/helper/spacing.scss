@@ -1,0 +1,33 @@
+$list: margin, padding;
+
+@each $item in $list {
+  $prefix: if($item == margin, m, p);
+
+  @for $i from 1 through 100 {
+    .#{$prefix}-t-#{$i} {
+      #{$item}-top: #{$i}px;
+    }
+
+    .#{$prefix}-r-#{$i} {
+      #{$item}-right: #{$i}px;
+    }
+
+    .#{$prefix}-b-#{$i} {
+      #{$item}-bottom: #{$i}px;
+    }
+
+    .#{$prefix}-l-#{$i} {
+      #{$item}-left: #{$i}px;
+    }
+
+    .#{$prefix}-h-#{$i} {
+      #{$item}-left: #{$i}px;
+      #{$item}-right: #{$i}px;
+    }
+
+    .#{$prefix}-v-#{$i} {
+      #{$item}-top: #{$i}px;
+      #{$item}-bottom: #{$i}px;
+    }
+  }
+}

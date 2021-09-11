@@ -1,0 +1,54 @@
+@import './../functions/text';
+
+@mixin setSpace($setSpace: padding, $setSpaceValues: 0 0 0 0) {
+  @if type-of($setSpace) == list {
+    $setSpaceValues: $setSpace;
+    $setSpace: padding;
+  }
+
+  $listLength: length($setSpaceValues);
+
+  @if ($listLength == 4) {
+    $top: nth($setSpaceValues, 1);
+    $right: nth($setSpaceValues, 2);
+    $bottom: nth($setSpaceValues, 3);
+    $left: nth($setSpaceValues, 4);
+
+    #{$setSpace}: if($top == auto, auto, setUnitPx($top))
+      if($right == auto, auto, setUnitPx($right))
+      if($bottom == auto, auto, setUnitPx($bottom))
+      if($left == auto, auto, setUnitPx($left));
+
+    #{$setSpace}: if($top == auto, auto, setUnitRem($top))
+      if($right == auto, auto, setUnitRem($right))
+      if($bottom == auto, auto, setUnitRem($bottom))
+      if($left == auto, auto, setUnitRem($left));
+  }
+
+  @if ($listLength == 2) {
+    $topBottom: nth($setSpaceValues, 1);
+    $leftRight: nth($setSpaceValues, 2);
+
+    #{$setSpace}: if($topBottom == auto, auto, setUnitPx($topBottom))
+      if($leftRight == auto, auto, setUnitPx($leftRight));
+
+    #{$setSpace}: if($topBottom == auto, auto, setUnitRem($topBottom))
+      if($leftRight == auto, auto, setUnitRem($leftRight));
+  }
+
+  @if ($listLength == 1) {
+    $topRightBottomLeft: nth($setSpaceValues, 1);
+
+    #{$setSpace}: if(
+      $topRightBottomLeft == auto,
+      auto,
+      setUnitPx($topRightBottomLeft)
+    );
+
+    #{$setSpace}: if(
+      $topRightBottomLeft == auto,
+      auto,
+      setUnitRem($topRightBottomLeft)
+    );
+  }
+}

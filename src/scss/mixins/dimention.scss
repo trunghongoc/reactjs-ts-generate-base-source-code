@@ -1,0 +1,6 @@
+@import './../functions/text';
+
+@mixin setDimention($dir, $pixcel) {
+  #{$dir}: setUnitPx($pixcel);
+  #{$dir}: setUnitRem($pixcel);
+}

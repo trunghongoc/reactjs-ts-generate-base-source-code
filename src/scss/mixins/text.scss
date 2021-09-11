@@ -1,0 +1,41 @@
+@use "sass:math";
+@import './../functions/text';
+
+@mixin fontSize($fontSize) {
+  font-size: ($fontSize * 10) + px;
+  font-size: $fontSize + rem;
+}
+
+@mixin getFontSize($pixcel) {
+  font-size: ($pixcel) + px;
+  font-size: ($pixcel / 16) + rem;
+}
+@mixin setFontSize($pixcel) {
+  font-size: ($pixcel) + px;
+  font-size: ($pixcel / 16) + rem;
+}
+
+@mixin fontRegular {
+  font-family: 'NotoSans-Regular';
+}
+
+@mixin fontBolt {
+  font-family: 'NotoSans-Bold';
+}
+
+@mixin fontBoldItalic {
+  font-family: 'NotoSans-BoldItalic';
+}
+
+@mixin fontItalic {
+  font-family: 'NotoSans-Italic';
+}
+
+@mixin fontMedium {
+  font-family: 'NotoSans-Medium';
+}
+
+@mixin lineHeight($lineHeight) {
+  line-height: setUnitPx($lineHeight);
+  line-height: setUnitRem($lineHeight);
+}

@@ -1,0 +1,6 @@
+@import './../functions/text';
+
+@mixin setAttrRem($attr, $pixcel) {
+  #{$attr}: setUnitPx($pixcel);
+  #{$attr}: setUnitRem($pixcel);
+}
