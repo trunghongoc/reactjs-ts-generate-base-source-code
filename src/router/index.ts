@@ -2,6 +2,15 @@ import { lazy } from 'react'
 import { IRouterItem, ROUTER_NAME_LIST } from './type'
 import { LAYOUT_NAME } from 'layouts/type'
 
+export const defaultRouteItem: IRouterItem = {
+  path: '/',
+  exact: true,
+  component: lazy((): Promise<any> => import('pages/Home')),
+  layout: { name: LAYOUT_NAME.ADMIN, options: {} },
+  isPrivate: true,
+  name: ROUTER_NAME_LIST.HOME
+}
+
 export const routers: IRouterItem[] = [
   {
     path: '/',

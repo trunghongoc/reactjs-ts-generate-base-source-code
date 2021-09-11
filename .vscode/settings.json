@@ -9,6 +9,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
@@ -27,5 +31,8 @@
   },
   "javascript.preferences.importModuleSpecifier": "non-relative",
   "prettier.stylelintIntegration": true,
-  "prettier.cssEnable": ["css", "less", "sass"]
+  "prettier.cssEnable": ["css", "less", "sass"],
+  "prettier.tslintIntegration": true,
+  "prettier.jsxSingleQuote": false,
+  "prettier.singleQuote": true
 }

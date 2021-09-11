@@ -1,16 +1,17 @@
 import { pick } from 'lodash'
 import store from 'redux/store'
-import {
-  setRouterConfig,
-  addToRouterHistories
-} from 'redux/reducers/routerSlice'
+import { setRouterConfig, addToHistories } from 'redux/reducers/routerSlice'
 
 import { IRouterItem } from 'router/type'
+import { IRouterDomLocation } from './type'
 
 export class RouterService {
-  handleAfterRouteEnter(currentRoute: IRouterItem): void {
+  handleAfterRouteEnter(
+    currentRoute: IRouterItem,
+    location: IRouterDomLocation
+  ): void {
     setTimeout((): void => {
-      const item: object = pick(currentRoute, [
+      const item: any = pick(currentRoute, [
         'path',
         'exact',
         'isPrivate',
@@ -18,8 +19,9 @@ export class RouterService {
         'name'
       ])
 
+      item.location = location
       store.dispatch(setRouterConfig(item))
-      store.dispatch(addToRouterHistories(item))
+      store.dispatch(addToHistories(item))
     })
   }
 }

@@ -1,5 +1,5 @@
 import { FC, Suspense, useMemo } from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route, Redirect, useLocation } from 'react-router-dom'
 import { useSelector, shallowEqual } from 'react-redux'
 
 import { routers } from 'router'
@@ -30,6 +30,8 @@ export const Layout: FC<IProps> = ({
   children,
   ...props
 }: IProps): JSX.Element => {
+  const location: any = useLocation()
+
   const currentRoute: IRouterItem | null = useSelector(
     (state: IStore): IRouterItem | null => state.router.current,
     shallowEqual
@@ -59,7 +61,7 @@ export const Layout: FC<IProps> = ({
                 exact={exact}
                 key={index}
                 render={(routeProps: any): any => {
-                  RouterService.handleAfterRouteEnter(router)
+                  RouterService.handleAfterRouteEnter(router, location)
 
                   if ((isPrivate && isLogedIn) || !isPrivate) {
                     return Page ? <Page {...props} {...routeProps} /> : <span />
