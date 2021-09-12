@@ -1,11 +1,6 @@
-import { ReactNode } from 'react'
-
+import { IMenuParentItem } from '../type'
 export interface IProps {
-  Icon: any
-  iconColor: string
-  title: string
-  isActive: boolean
-  children?: any
   isExpandMenu: boolean
   themeClassName: string
+  item: IMenuParentItem
 }

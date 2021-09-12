@@ -21,6 +21,14 @@ export const routers: IRouterItem[] = [
     name: ROUTER_NAME_LIST.HOME
   },
   {
+    path: '/about',
+    exact: true,
+    component: lazy((): Promise<any> => import('pages/About')),
+    layout: { name: LAYOUT_NAME.ADMIN, options: {} },
+    isPrivate: true,
+    name: ROUTER_NAME_LIST.HOME
+  },
+  {
     path: '/login',
     exact: false,
     component: lazy((): Promise<any> => import('pages/Login')),

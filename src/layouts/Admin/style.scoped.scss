@@ -20,6 +20,7 @@
     .right {
       box-sizing: border-box;
       @include setSpacing(20 24);
+      min-height: calc(100vh - #{getUnitRem($nav-height)});
       background: $theme-light-body-bg;
 
       > .content {
