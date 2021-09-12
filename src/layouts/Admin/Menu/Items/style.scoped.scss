@@ -12,4 +12,7 @@
 
   height: calc(100% - #{getUnitRem(150)});
   overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
