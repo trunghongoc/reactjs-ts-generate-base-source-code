@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 
 export interface IProps {
-  Icon: ReactNode
+  Icon: any
   iconColor: string
   title: string
   isActive: boolean
