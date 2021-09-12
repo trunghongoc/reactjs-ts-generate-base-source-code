@@ -8,9 +8,9 @@ import { useCheckIsLogedIn } from 'hooks/user'
 import { AdminLayout } from './Admin'
 import { AuthenLayout } from './Authen'
 import { BlankLayout } from './Blank'
+import { PageWrapper } from './PageWrapper'
 
 import { IStore } from 'redux/type'
-import RouterService from 'services/router'
 import { IUser } from 'services/user/type'
 import { IProps, LAYOUT_NAME } from './type'
 
@@ -61,10 +61,17 @@ export const Layout: FC<IProps> = ({
                 exact={exact}
                 key={index}
                 render={(routeProps: any): any => {
-                  RouterService.handleAfterRouteEnter(router, location)
-
                   if ((isPrivate && isLogedIn) || !isPrivate) {
-                    return Page ? <Page {...props} {...routeProps} /> : <span />
+                    // return Page ? <Page {...props} {...routeProps} /> : <span />
+
+                    return (
+                      <PageWrapper
+                        Page={Page}
+                        pageProps={{ ...props, ...routeProps }}
+                        routeConfig={router}
+                        location={location}
+                      />
+                    )
                   }
 
                   if (isPrivate && !isLogedIn) {

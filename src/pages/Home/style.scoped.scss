@@ -31,4 +31,8 @@
   &.-theme-dark {
     @include theme-dark;
   }
+
+  .ant-table-wrapper {
+    width: 100%;
+  }
 }

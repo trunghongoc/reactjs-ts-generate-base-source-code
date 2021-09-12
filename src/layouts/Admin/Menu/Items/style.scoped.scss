@@ -10,6 +10,6 @@
 .items {
   @include setSpacing(margin-top, 6);
 
-  height: calc(100% - #{getUnitRem(130)});
+  height: calc(100% - #{getUnitRem(150)});
   overflow-y: auto;
 }

@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC, useState, useEffect } from 'react'
 
 import { Navbar } from './Navbar'
 import { Menu } from './Menu'
@@ -12,6 +12,10 @@ export const AdminLayout: FC<IProps> = ({ children }: IProps): JSX.Element => {
   const [isExpandMenu, setIsExpandMenu] = useState<boolean>(true)
 
   const { themeClassName }: IUseAdminThemeStyle = useAdminThemeStyle()
+
+  useEffect((): void => {
+    console.log('---mounted')
+  }, [])
 
   return (
     <>

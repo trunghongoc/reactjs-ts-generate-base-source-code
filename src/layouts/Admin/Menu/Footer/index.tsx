@@ -35,14 +35,18 @@ export const Footer: FC<IProps> = ({
   }
 
   return (
-    <div className={`footer ${themeClassName}`}>
-      <div className="switch-theme">
-        {isExpandMenu && (
+    <div
+      className={`footer ${themeClassName} ${
+        isExpandMenu ? '-is-expand-menu' : ''
+      }`}
+    >
+      {isExpandMenu && (
+        <div className="switch-theme">
           <div className="round-btn" onClick={toggleThemeStyle}>
             {name === ADMIN_THEME_NAME.dark ? <SunIcon /> : <MoonIcon />}
           </div>
-        )}
-      </div>
+        </div>
+      )}
 
       <div className="expand">
         <div className="round-btn" onClick={toggleExpandMenu}>

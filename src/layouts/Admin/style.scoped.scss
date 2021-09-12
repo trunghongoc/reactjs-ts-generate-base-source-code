@@ -12,14 +12,14 @@
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: #{getUnitRem($menu-expand-width)} auto;
-    @include setSpacing(margin-top, $nav-height);
+    @include setSpacing(padding-top, $nav-height);
 
     .left {
     }
 
     .right {
       box-sizing: border-box;
-      @include setSpacing(20 24);
+      @include setSpacing(padding, 20 24);
       min-height: calc(100vh - #{getUnitRem($nav-height)});
       background: $theme-light-body-bg;
 

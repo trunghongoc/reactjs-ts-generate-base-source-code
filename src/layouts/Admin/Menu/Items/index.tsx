@@ -80,6 +80,272 @@ export const Items: FC<IProps> = ({ isExpandMenu }): JSX.Element => {
       iconColor: '#0090e7',
       isActive: false,
       callback: (): void => alert('callback function')
+    },
+
+    //.........
+    {
+      id: uuid(),
+      label: 'Tables',
+      icon: SpeedIcon,
+      iconColor: '#ffab00',
+      isActive: false,
+      children: [
+        {
+          id: uuid(),
+          label: '1st table',
+          icon: SpeedIcon,
+          iconColor: '#ffab00',
+          isActive: false
+        },
+        {
+          id: uuid(),
+          label: '2nd table',
+          icon: SpeedIcon,
+          iconColor: '#ffab00',
+          isActive: false
+        },
+        {
+          id: uuid(),
+          label: '3rd table',
+          iconColor: '#ffab00',
+          isActive: false
+        },
+        {
+          id: uuid(),
+          label: '4th table',
+          icon: SpeedIcon,
+          iconColor: '#ffab00',
+          isActive: false
+        }
+      ]
+    },
+    {
+      id: uuid(),
+      label: 'Audit',
+      icon: SpeedIcon,
+      iconColor: '#0090e7',
+      isActive: false,
+      callback: (): void => alert('callback function')
+    },
+    {
+      id: uuid(),
+      label: 'Tables',
+      icon: SpeedIcon,
+      iconColor: '#ffab00',
+      isActive: false,
+      children: [
+        {
+          id: uuid(),
+          label: '1st table',
+          icon: SpeedIcon,
+          iconColor: '#ffab00',
+          isActive: false
+        },
+        {
+          id: uuid(),
+          label: '2nd table',
+          icon: SpeedIcon,
+          iconColor: '#ffab00',
+          isActive: false
+        },
+        {
+          id: uuid(),
+          label: '3rd table',
+          iconColor: '#ffab00',
+          isActive: false
+        },
+        {
+          id: uuid(),
+          label: '4th table',
+          icon: SpeedIcon,
+          iconColor: '#ffab00',
+          isActive: false
+        }
+      ]
+    },
+    {
+      id: uuid(),
+      label: 'Audit',
+      icon: SpeedIcon,
+      iconColor: '#0090e7',
+      isActive: false,
+      callback: (): void => alert('callback function')
+    },
+    {
+      id: uuid(),
+      label: 'Tables',
+      icon: SpeedIcon,
+      iconColor: '#ffab00',
+      isActive: false,
+      children: [
+        {
+          id: uuid(),
+          label: '1st table',
+          icon: SpeedIcon,
+          iconColor: '#ffab00',
+          isActive: false
+        },
+        {
+          id: uuid(),
+          label: '2nd table',
+          icon: SpeedIcon,
+          iconColor: '#ffab00',
+          isActive: false
+        },
+        {
+          id: uuid(),
+          label: '3rd table',
+          iconColor: '#ffab00',
+          isActive: false
+        },
+        {
+          id: uuid(),
+          label: '4th table',
+          icon: SpeedIcon,
+          iconColor: '#ffab00',
+          isActive: false
+        }
+      ]
+    },
+    {
+      id: uuid(),
+      label: 'Audit',
+      icon: SpeedIcon,
+      iconColor: '#0090e7',
+      isActive: false,
+      callback: (): void => alert('callback function')
+    },
+    {
+      id: uuid(),
+      label: 'Tables',
+      icon: SpeedIcon,
+      iconColor: '#ffab00',
+      isActive: false,
+      children: [
+        {
+          id: uuid(),
+          label: '1st table',
+          icon: SpeedIcon,
+          iconColor: '#ffab00',
+          isActive: false
+        },
+        {
+          id: uuid(),
+          label: '2nd table',
+          icon: SpeedIcon,
+          iconColor: '#ffab00',
+          isActive: false
+        },
+        {
+          id: uuid(),
+          label: '3rd table',
+          iconColor: '#ffab00',
+          isActive: false
+        },
+        {
+          id: uuid(),
+          label: '4th table',
+          icon: SpeedIcon,
+          iconColor: '#ffab00',
+          isActive: false
+        }
+      ]
+    },
+    {
+      id: uuid(),
+      label: 'Audit',
+      icon: SpeedIcon,
+      iconColor: '#0090e7',
+      isActive: false,
+      callback: (): void => alert('callback function')
+    },
+    {
+      id: uuid(),
+      label: 'Tables',
+      icon: SpeedIcon,
+      iconColor: '#ffab00',
+      isActive: false,
+      children: [
+        {
+          id: uuid(),
+          label: '1st table',
+          icon: SpeedIcon,
+          iconColor: '#ffab00',
+          isActive: false
+        },
+        {
+          id: uuid(),
+          label: '2nd table',
+          icon: SpeedIcon,
+          iconColor: '#ffab00',
+          isActive: false
+        },
+        {
+          id: uuid(),
+          label: '3rd table',
+          iconColor: '#ffab00',
+          isActive: false
+        },
+        {
+          id: uuid(),
+          label: '4th table',
+          icon: SpeedIcon,
+          iconColor: '#ffab00',
+          isActive: false
+        }
+      ]
+    },
+    {
+      id: uuid(),
+      label: 'Audit',
+      icon: SpeedIcon,
+      iconColor: '#0090e7',
+      isActive: false,
+      callback: (): void => alert('callback function')
+    },
+    {
+      id: uuid(),
+      label: 'Tables',
+      icon: SpeedIcon,
+      iconColor: '#ffab00',
+      isActive: false,
+      children: [
+        {
+          id: uuid(),
+          label: '1st table',
+          icon: SpeedIcon,
+          iconColor: '#ffab00',
+          isActive: false
+        },
+        {
+          id: uuid(),
+          label: '2nd table',
+          icon: SpeedIcon,
+          iconColor: '#ffab00',
+          isActive: false
+        },
+        {
+          id: uuid(),
+          label: '3rd table',
+          iconColor: '#ffab00',
+          isActive: false
+        },
+        {
+          id: uuid(),
+          label: '4th table',
+          icon: SpeedIcon,
+          iconColor: '#ffab00',
+          isActive: false
+        }
+      ]
+    },
+    {
+      id: uuid(),
+      label: 'Audit',
+      icon: SpeedIcon,
+      iconColor: '#0090e7',
+      isActive: false,
+      callback: (): void => alert('callback function')
     }
   ])
 

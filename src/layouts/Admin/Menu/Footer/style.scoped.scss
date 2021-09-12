@@ -7,9 +7,10 @@
 
 .footer {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-auto-flow: column;
+  grid-template-columns: 100%;
   align-items: center;
-  @include setDimention(height, 40);
+  @include setDimention(height, 52);
   @include setSpacing(padding, 0 18);
   box-sizing: border-box;
 
@@ -21,8 +22,8 @@
 
     .round-btn {
       display: flex;
-      @include setDimention(width, 32);
-      @include setDimention(height, 32);
+      @include setDimention(width, 31);
+      @include setDimention(height, 31);
       border-radius: 50%;
       background: rgba(108, 114, 147, 0.2);
       justify-content: center;
@@ -41,9 +42,17 @@
   }
 
   .expand {
-    justify-content: end;
+    justify-content: start;
 
     @extend %item;
+  }
+
+  &.-is-expand-menu {
+    grid-template-columns: 50% 50%;
+
+    .expand {
+      justify-content: end;
+    }
   }
 
   @mixin theme-light {

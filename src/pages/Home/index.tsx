@@ -13,6 +13,12 @@ const Home: FC = (): JSX.Element => {
     <div className={`home-page ${themeClassName}`}>
       <div className="header">Home page</div>
 
+      {/* {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(
+        (item: number): JSX.Element => (
+          <MyTable key={item} />
+        )
+      )} */}
+
       {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(
         (item: number): JSX.Element => (
           <Card key={item} />
