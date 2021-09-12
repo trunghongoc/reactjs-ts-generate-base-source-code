@@ -20,11 +20,6 @@ export const routerSlice: any = createSlice({
       state: IRouterState,
       action: { payload: IRouterItemHistory }
     ): void => {
-      console.log({
-        state,
-        payload: action.payload
-      })
-
       const maxHistoryItems: number = 20
       const [lastHistory] = takeRight(state.histories, 1)
       const checkIsSameHistory: any = (

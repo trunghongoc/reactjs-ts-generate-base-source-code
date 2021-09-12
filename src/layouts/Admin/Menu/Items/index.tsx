@@ -31,6 +31,14 @@ export const Items: FC<IProps> = ({ isExpandMenu }): JSX.Element => {
     },
     {
       id: uuid(),
+      label: 'Login',
+      icon: SpeedIcon,
+      iconColor: '#fc424a',
+      isActive: false,
+      path: '/login'
+    },
+    {
+      id: uuid(),
       label: 'Tables',
       icon: SpeedIcon,
       iconColor: '#ffab00',
