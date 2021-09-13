@@ -1,3 +1,5 @@
+import { ReactNode } from 'react'
+
 export interface IProps {
   isExpandMenu: boolean
 }
@@ -12,10 +14,10 @@ export interface IMenuItem {
 }
 
 export interface IMenuChildItem extends IMenuItem {
-  icon?: any
+  icon?: ReactNode
 }
 export interface IMenuParentItem extends IMenuItem {
-  icon: any
+  icon: ReactNode
   path?: string
   callback?: VoidFunction
   children?: IMenuChildItem[]

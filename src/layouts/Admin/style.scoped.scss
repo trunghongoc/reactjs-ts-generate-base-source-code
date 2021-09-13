@@ -39,7 +39,7 @@
   @mixin theme-light {
     .admin-layout__body {
       .right {
-        background: #fff;
+        background: $theme-light-body-bg;
       }
     }
   }
