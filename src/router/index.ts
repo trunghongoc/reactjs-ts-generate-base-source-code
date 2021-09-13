@@ -32,7 +32,7 @@ export const routers: IRouterItem[] = [
     path: '/login',
     exact: true,
     component: lazy((): Promise<any> => import('pages/Login')),
-    layout: { name: LAYOUT_NAME.AUTHEN },
+    layout: { name: LAYOUT_NAME.POLYGON },
     isPrivate: false,
     name: ROUTER_NAME_LIST.LOGIN
   },
@@ -40,7 +40,7 @@ export const routers: IRouterItem[] = [
     path: '/register',
     exact: true,
     component: lazy((): Promise<any> => import('pages/Register')),
-    layout: { name: LAYOUT_NAME.AUTHEN },
+    layout: { name: LAYOUT_NAME.POLYGON },
     isPrivate: false,
     name: ROUTER_NAME_LIST.REGISTER
   },
@@ -48,7 +48,7 @@ export const routers: IRouterItem[] = [
     path: '*',
     exact: false,
     component: lazy((): Promise<any> => import('pages/Page404')),
-    layout: { name: LAYOUT_NAME.AUTHEN },
+    layout: { name: LAYOUT_NAME.POLYGON },
     isPrivate: true,
     name: ROUTER_NAME_LIST.UNKNOW
   }

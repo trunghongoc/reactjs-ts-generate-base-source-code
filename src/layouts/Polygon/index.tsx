@@ -1,14 +1,20 @@
 import { FC } from 'react'
 
+import { useAdminThemeStyle, IUseAdminThemeStyle } from 'hooks/useThemeStyle'
+
 import { IProps } from './type'
 
 import logoIcon from 'imgs/logo_200x200.png'
 
 import './style.scoped.scss'
 
-export const AuthenLayout: FC<IProps> = ({ children }: IProps): JSX.Element => {
+export const PolygonLayout: FC<IProps> = ({
+  children
+}: IProps): JSX.Element => {
+  const { themeClassName }: IUseAdminThemeStyle = useAdminThemeStyle()
+
   return (
-    <div className="authen-layout">
+    <div className={`polygon-layout ${themeClassName}`}>
       <div className="left">
         <div className="left__content">
           <div className="left__content__body">

@@ -5,5 +5,5 @@ export interface IProps {
 export enum LAYOUT_NAME {
   BLANK = 'BLANK',
   ADMIN = 'ADMIN',
-  AUTHEN = 'AUTHEN'
+  POLYGON = 'POLYGON'
 }

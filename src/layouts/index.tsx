@@ -6,7 +6,7 @@ import { routers } from 'router'
 import { IRouterItem } from 'router/type'
 import { useCheckIsLogedIn } from 'hooks/user'
 import { AdminLayout } from './Admin'
-import { AuthenLayout } from './Authen'
+import { PolygonLayout } from './Polygon'
 import { BlankLayout } from './Blank'
 import { PageWrapper } from './PageWrapper'
 
@@ -18,7 +18,7 @@ import './style.scoped.scss'
 
 const LAYOUT: any = {
   [LAYOUT_NAME.ADMIN]: AdminLayout,
-  [LAYOUT_NAME.AUTHEN]: AuthenLayout,
+  [LAYOUT_NAME.POLYGON]: PolygonLayout,
   [LAYOUT_NAME.BLANK]: BlankLayout
 }
 
