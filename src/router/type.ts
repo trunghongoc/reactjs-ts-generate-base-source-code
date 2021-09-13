@@ -2,7 +2,9 @@ import { LAYOUT_NAME } from 'layouts/type'
 
 export enum ROUTER_NAME_LIST {
   HOME = 'HOME',
-  LOGIN = 'LOGIN'
+  LOGIN = 'LOGIN',
+  REGISTER = 'REGISTER',
+  UNKNOW = 'UNKNOW'
 }
 
 export interface ILayout {

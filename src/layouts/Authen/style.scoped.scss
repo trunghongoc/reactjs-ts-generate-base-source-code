@@ -1,2 +1,45 @@
+@import 'scss/var/color';
+@import 'scss/mixins/text';
+@import 'scss/mixins/dimention';
+@import 'scss/mixins/spacing';
+@import 'scss/media';
+@import 'scss/functions/unit';
+
 .authen-layout {
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  .left {
+    &__content {
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 50%;
+      height: 100vh;
+
+      background: rgb(124, 223, 211);
+      background: rgb(124, 223, 211);
+      background: linear-gradient(
+        152deg,
+        rgba(124, 223, 211, 1) 0%,
+        rgba(27, 196, 231, 1) 100%
+      );
+
+      &__body {
+        position: relative;
+
+        width: 100%;
+        height: 100%;
+
+        background-image: url('./../../imgs/pngwing.com.png');
+        background-size: 100% 100%;
+      }
+    }
+  }
+
+  .right {
+    box-sizing: border-box;
+    @include setSpacing(padding, 20);
+  }
 }

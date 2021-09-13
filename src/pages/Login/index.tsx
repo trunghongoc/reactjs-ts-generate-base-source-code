@@ -6,8 +6,8 @@ import './style.scoped.scss'
 const Login: FC = (): JSX.Element => {
   return (
     <div>
-      <p>Login</p>
-
+      <p>Login Page</p>
+      <Link to="/register">Go to Register</Link> |{' '}
       <Link to="/">Go to Dashboard</Link>
     </div>
   )
